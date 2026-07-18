@@ -5,9 +5,10 @@ import { PrismaClient } from '@prisma/client';
 const app = express();
 const prisma = new PrismaClient();
 
-// ==========================================
-// ⚠️ ESSENTIAL MIDDLEWARE (Must be at the top!)
-// ==========================================
+// ⚠️ THIS LINE WAS MISSING!
+const PORT = process.env.PORT || 5000;
+
+// Essential Middleware
 app.use(cors({ origin: '*' }));
 app.use(express.json()); // Allows secure connections from Vercel & local frontendapp.use(express.json());
 
