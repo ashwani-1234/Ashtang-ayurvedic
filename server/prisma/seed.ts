@@ -5,19 +5,23 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('🌱 Seeding Ashtang Ayurved database...');
 
-  // Create default doctor
-  const doctor = await prisma.doctor.upsert({
-    where: { id: 1 },
-    update: {},
-    create: {
-      name: 'Dr. Brahma Prakash Maurya',
-      specialty: 'BAMS, Panchkarma Specialist',
-      bio: 'Offering world-class Ayurvedic procedures in Sitapur with 3+ years of clinical experience.',
-      phone: '+918052899698',
-    },
+  // 1. Create default doctor (Without forcing ID #1!)
+  const existingDoctor = await prisma.doctor.findFirst({
+    where: { name: 'Dr. Brahma Prakash Maurya' }
   });
 
-  // Create core services
+  if (!existingDoctor) {
+    await prisma.doctor.create({
+      data: {
+        name: 'Dr. Brahma Prakash Maurya',
+        specialty: 'BAMS, Panchkarma Specialist',
+        bio: 'Offering world-class Ayurvedic procedures in Sitapur with 3+ years of clinical experience.',
+        phone: '+918052899698',
+      },
+    });
+  }
+
+  // 2. Create core services
   const services = [
     { name: 'Agni Karma', durationMinutes: 30, description: 'Thermal micro-cautery for muscular and joint pain relief.' },
     { name: 'Panchkarma', durationMinutes: 60, description: 'Five-fold detoxification to restore body balance.' },
@@ -31,17 +35,23 @@ async function main() {
       create: s,
     });
   }
-// Create default review
-  await prisma.review.upsert({
-    where: { id: 1 },
-    update: {},
-    create: {
-      name: 'Amit Sharma, Sitapur',
-      text: 'The Agni Karma treatment for my joint pain was miraculous. Highly recommend Ashtang Ayurved!',
-      stars: 5,
-    },
+
+  // 3. Create default review (Without forcing ID #1 to protect PostgreSQL sequence!)
+  const existingReview = await prisma.review.findFirst({
+    where: { name: 'Amit Sharma, Sitapur' }
   });
-  console.log('✅ Seeding complete! Database initialized with Dr. Maurya and treatments.');
+
+  if (!existingReview) {
+    await prisma.review.create({
+      data: {
+        name: 'Amit Sharma, Sitapur',
+        text: 'The Agni Karma treatment for my joint pain was miraculous. Highly recommend Ashtang Ayurved!',
+        stars: 5,
+      },
+    });
+  }
+
+  console.log('✅ Seeding complete! PostgreSQL sequence counters are synchronized.');
 }
 
 main()
@@ -52,4 +62,3 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
-  

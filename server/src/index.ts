@@ -1,16 +1,15 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
-
-dotenv.config();
 
 const app = express();
 const prisma = new PrismaClient();
-const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors({ origin: '*' })); // Allows secure connections from Vercel & local frontendapp.use(express.json());
+// ==========================================
+// ⚠️ ESSENTIAL MIDDLEWARE (Must be at the top!)
+// ==========================================
+app.use(cors({ origin: '*' }));
+app.use(express.json()); // Allows secure connections from Vercel & local frontendapp.use(express.json());
 
 // ==========================================
 // API ENDPOINTS
