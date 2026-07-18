@@ -34,7 +34,7 @@ export const PatientBookingForm: React.FC<{ onSuccess?: () => void }> = ({ onSuc
 
   // 1. Fetch available doctors and services on component mount
   useEffect(() => {
-    fetch('https://ashtang-clinic-api.onrender.com/api/clinic-data')
+    fetch('https://ashtang-clinic-api.onrender.com/api/appointments')
       .then((res) => res.json())
       .then((data) => {
         setServices(data.services || []);
