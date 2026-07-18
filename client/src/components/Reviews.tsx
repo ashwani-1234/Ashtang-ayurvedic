@@ -24,7 +24,7 @@ export const Reviews: React.FC = () => {
   // 1. Fetch Top 10 Reviews from SQLite DB
   const fetchReviews = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/reviews');
+      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/reviews');
       if (!res.ok) throw new Error('Failed to load reviews');
       const data = await res.json();
       setReviews(data);
@@ -49,7 +49,7 @@ export const Reviews: React.FC = () => {
     setSuccessMsg(null);
 
     try {
-      const res = await fetch('http://localhost:5000/api/reviews', {
+      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, text, stars: rating }),

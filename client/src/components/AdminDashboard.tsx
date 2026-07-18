@@ -33,7 +33,7 @@ export const AdminDashboard: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('http://localhost:5000/api/appointments');
+      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/appointments');
       if (!res.ok) throw new Error('Failed to fetch patient appointments.');
       const data = await res.json();
       setAppointments(data);
@@ -51,7 +51,7 @@ export const AdminDashboard: React.FC = () => {
   const handleStatusChange = async (id: string, newStatus: string) => {
     setUpdatingId(id);
     try {
-      const res = await fetch(`http://localhost:5000/api/appointments/${id}`, {
+      const res = await fetch(`https://ashtang-clinic-api.onrender.com/api/appointments/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
