@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export default function Footer() {
+// ✅ Removed the word "default" so it works cleanly with { Footer } imports!
+export function Footer() {
   const [tapCount, setTapCount] = useState(0);
 
   const handleSecretTap = () => {
@@ -10,11 +11,10 @@ export default function Footer() {
     // If tapped 3 times rapidly, transport directly to the Admin Portal!
     if (nextCount === 3) {
       setTapCount(0);
-      window.location.href = '/admin'; // Bulletproof redirect that always works!
+      window.location.href = '/admin';
     }
 
     // Safety feature: Auto-reset tap count after 2 seconds
-    // This prevents random patient clicks from accumulating over time
     setTimeout(() => {
       setTapCount(0);
     }, 2000);
