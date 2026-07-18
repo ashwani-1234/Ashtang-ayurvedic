@@ -10,11 +10,11 @@ import { Reviews } from './components/Reviews';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { BookingPage } from './components/BookingPage';
-
+import { PrakritiTest } from './components/PrakritiTest';
 // Homepage Component Wrapper
 const HomePage: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => (
   <>
-    <Hero />
+    <Hero /><PrakritiTest onOpenBooking="{()"> setIsBookingOpen(true)} />
     <Services />
     <DoctorBio />
     <Location />
