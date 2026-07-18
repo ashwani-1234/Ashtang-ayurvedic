@@ -10,8 +10,7 @@ const prisma = new PrismaClient();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173' })); // Allow requests from Vite client
-app.use(express.json());
+app.use(cors({ origin: '*' })); // Allows secure connections from Vercel & local frontendapp.use(express.json());
 
 // ==========================================
 // API ENDPOINTS
