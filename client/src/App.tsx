@@ -14,7 +14,8 @@ import { PrakritiTest } from './components/PrakritiTest';
 // Homepage Component Wrapper
 const HomePage: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => (
   <>
-    <Hero /><PrakritiTest onOpenBooking="{()"> setIsBookingOpen(true)} />
+    <Hero />
+    <PrakritiTest onOpenBooking={() => setIsBookingOpen(true)} />
     <Services />
     <DoctorBio />
     <Location />
