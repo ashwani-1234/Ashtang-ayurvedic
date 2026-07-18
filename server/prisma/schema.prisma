@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Doctor {
+  id           Int           @id @default(autoincrement())
+  name         String
+  specialty    String
+  bio          String?
+  phone        String
+  appointments Appointment[]
+}
+
+model Service {
+  id               Int           @id @default(autoincrement())
+  name             String        @unique
+  durationMinutes  Int           @default(45)
+  cost             Float?
+  description      String?
+  appointments     Appointment[]
+}
+
+model Appointment {
+  id          String   @id @default(uuid())
+  patientName String
+  phone       String
+  email       String?
+  notes       String?
+  status      String   @default("CONFIRMED") // CONFIRMED, CANCELLED, COMPLETED
+  appointmentDate DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  // Foreign Keys & Relationships
+  doctorId    Int
+  doctor      Doctor   @relation(fields: [doctorId], references: [id])
+  serviceId   Int
+  service     Service  @relation(fields: [serviceId], references: [id])
+}
+model Review {
+  id        Int      @id @default(autoincrement())
+  name      String
+  text      String
+  stars     Int      @default(5)
+  createdAt DateTime @default(now())
+}

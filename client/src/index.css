@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-green: #1b3d2f;
+  --color-accent-gold: #c5a059;
+  --color-bg-cream: #fdfaf5;
+  --color-text-dark: #2c2c2c;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Poppins', sans-serif;
+}
