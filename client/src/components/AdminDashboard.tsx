@@ -33,7 +33,7 @@ export const AdminDashboard: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/appointments');
+      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/clinic-data');
       if (!res.ok) throw new Error('Failed to fetch patient appointments.');
       const data = await res.json();
       setAppointments(data);

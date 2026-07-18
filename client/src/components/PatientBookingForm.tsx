@@ -34,7 +34,7 @@ export const PatientBookingForm: React.FC<{ onSuccess?: () => void }> = ({ onSuc
 
   // 1. Fetch available doctors and services on component mount
   useEffect(() => {
-    fetch('https://ashtang-clinic-api.onrender.com](https://ashtang-clinic-api.onrender.com/api/clinic-data')
+    fetch('https://ashtang-clinic-api.onrender.com/api/clinic-data')
       .then((res) => res.json())
       .then((data) => {
         setServices(data.services || []);
@@ -91,7 +91,7 @@ export const PatientBookingForm: React.FC<{ onSuccess?: () => void }> = ({ onSuc
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://ashtang-clinic-api.onrender.com](https://ashtang-clinic-api.onrender.com/api/appointments', {
+      const response = await fetch('https://ashtang-clinic-api.onrender.com/api/clinic-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
