@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
               <Users size={28} />
             </div>
             <div>
-              <h4 className="font-bold text-primary-green text-sm sm:text-base">500+</h4>
+              <h4 className="font-bold text-primary-green text-sm sm:text-base">1000+</h4>
               <p className="text-gray-500 text-xs">Happy Patients</p>
             </div>
           </div>

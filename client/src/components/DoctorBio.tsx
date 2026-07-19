@@ -11,7 +11,7 @@ export const DoctorBio: React.FC = () => {
             <div className="relative">
               <div className="absolute -bottom-4 -right-4 w-full h-full border-4 border-accent-gold rounded-2xl -z-10 bg-accent-gold/10"></div>
               <img 
-                src="/dr .jpeg" 
+                src="Dr BP Maurya.jpeg" 
                 alt="Dr. Brahma Prakash Maurya" 
                 className="rounded-2xl shadow-lg w-full max-w-sm object-cover aspect-[4/5]"
               />
@@ -21,7 +21,7 @@ export const DoctorBio: React.FC = () => {
           <div className="w-full md:w-1/2">
             <span className="text-accent-gold font-bold uppercase tracking-widest text-xs">Expert Care</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mt-2 mb-6">
-              Ashtang Ayurved Specialist
+              Ashtang Ayurveda Clinic Specialist
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
               Offering world-class Ayurvedic procedures right in the heart of Sitapur. We specialize in <strong className="text-primary-green font-semibold">Panchkarma, Agni Karma, and Leech Therapy</strong> for holistic recovery. Our protocols treat root causes rather than just managing symptoms.

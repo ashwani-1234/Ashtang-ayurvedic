@@ -11,13 +11,17 @@ import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { BookingPage } from './components/BookingPage';
 import { PrakritiTest } from './components/PrakritiTest';
+import { ConditionsWeManage } from './components/ConditionsWeManage';
+import { HealthBlog } from './components/HealthBlog';
 // Homepage Component Wrapper
 const HomePage: React.FC<{ onOpenModal: () => void }> = ({ onOpenModal }) => (
   <>
     <Hero />
-    <PrakritiTest onOpenBooking={() => setIsBookingOpen(true)} />
+    <PrakritiTest onOpenBooking={onOpenModal} />
+    <ConditionsWeManage onOpenBooking={() => setIsModalOpen(true)} />
     <Services />
     <DoctorBio />
+    <HealthBlog onOpenBooking={() => setIsBookingOpen(true)} />
     <Location />
     <Reviews />
   </>
@@ -45,7 +49,7 @@ export default function App() {
           </Routes>
         </main>
         
-        <Footer />
+        <Footer onOpenBooking={() => setIsModalOpen(true)} />
 
         {/* Interactive Booking Modal (For quick popup bookings on Home) */}
         <BookingModal 

@@ -214,6 +214,7 @@ export function PrakritiTest({ onOpenBooking }: PrakritiTestProps) {
         {!result ? (
           <div>
             {/* Header & Progress Bar */}
+            <span>प्रकृति परीक्षण</span>
             <div className="mb-8">
               <div className="flex justify-between text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">
                 <span>प्रश्न {currentStep + 1} / {questions.length}</span>

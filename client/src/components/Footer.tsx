@@ -1,6 +1,11 @@
 import { useState } from 'react';
+/*import { SymptomChecker } from './SymptomChecker'; just uncomment 2 lines*/
 
-export function Footer() {
+interface FooterProps {
+  onOpenBooking?: () => void;
+}
+
+export function Footer({ onOpenBooking }: FooterProps) {
   const [tapCount, setTapCount] = useState(0);
 
   const handleSecretTap = () => {
@@ -23,6 +28,9 @@ export function Footer() {
     <footer className="bg-emerald-950 text-white py-10 text-center border-t border-emerald-900">
       <div className="max-w-4xl mx-auto px-6">
         
+        {/* Ayurvedic Assessment Tools */}
+        {/* <SymptomChecker onOpenBooking={onOpenBooking} /> */}
+
         {/* ========================================== */}
         {/* MEDICAL DISCLAIMER SECTION */}
         {/* ========================================== */}

@@ -4,15 +4,33 @@ import { Flame, Sparkles, HeartPulse } from 'lucide-react';
 export const Services: React.FC = () => {
   const treatments = [
     {
+      title: "Panchkarma",
+      desc: "A comprehensive five-fold detoxification process to restore balance and boost your natural immunity.",
+      tags: ["Detox", "Immunity", "Digestive Health", "Immunity", "Stress Relief"],
+      icon: <Sparkles className="w-10 h-10 text-accent-gold" />
+    },
+    {
       title: "Agni Karma",
       desc: "An ancient thermal therapy providing instant relief from chronic muscular and joint pain without surgery.",
       tags: ["Sciatica", "Joint Pain"],
       icon: <Flame className="w-10 h-10 text-accent-gold" />
     },
     {
-      title: "Panchkarma",
-      desc: "A comprehensive five-fold detoxification process to restore balance and boost your natural immunity.",
-      tags: ["Detox", "Immunity"],
+      title: "Abhyanga",
+      desc: "A full-body Ayurvedic oil massage using warm herbal oils to improve circulation, relieve stress, nourish the skin, and promote deep relaxation.",
+      tags: ["MUSCLE PAIN", "FATIGUE", "POOR CIRCULATION"],
+      icon: <Sparkles className="w-10 h-10 text-accent-gold" />
+    },
+    {
+      title: "Shirodhara",
+      desc: "A deeply calming therapy where warm herbal oil flows over the forehead to relax the mind and promote emotional balance.",
+      tags: ["ANXIETY", "INSOMNIA", "MIGRAINE", "MENTAL STRESS"],
+      icon: <Sparkles className="w-10 h-10 text-accent-gold" />
+    },
+    {
+      title: "Basti",
+      desc: "A medicated enema therapy that detoxifies the colon, balances Vata, and supports digestive and joint health.",
+      tags: ["CONSTIPATION", "ARTHRITIS", "LOW BACK PAIN", "VATA DISORDERS"],
       icon: <Sparkles className="w-10 h-10 text-accent-gold" />
     },
     {
