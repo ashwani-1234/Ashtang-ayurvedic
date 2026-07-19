@@ -24,7 +24,7 @@ export const DoctorBio: React.FC = () => {
               Ashtang Ayurveda Clinic Specialist
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Offering world-class Ayurvedic procedures right in the heart of Sitapur. We specialize in <strong className="text-primary-green font-semibold">Panchkarma, Agni Karma, and Leech Therapy</strong> for holistic recovery. Our protocols treat root causes rather than just managing symptoms.
+              <strong className="text-primary-green font-semibold">Dr. Brahma Prakash Maurya (B.A.M.S.)</strong> is a dedicated Consultant Ayurvedic Physician and Panchakarma Expert and the Founder of Ashtang Ayurveda Clinic, Sitapur, Uttar Pradesh. He is committed to delivering authentic Ayurvedic healthcare by combining the timeless principles of Ayurveda with a patient-centered approach to diagnosis and treatment. <p className="text-gray-700 leading-relaxed mb-6"><strong className="text-primary-green font-semibold">Dr. Maurya</strong> believes that every individual is unique, and effective treatment begins with understanding the patient's Prakriti (body constitution), Dosha imbalance, lifestyle, and underlying cause of illness. Rather than focusing only on symptom relief, he aims to restore the body's natural balance and promote long-term health through personalized Ayurvedic care.</p>
             </p>
             <p className="font-serif font-bold text-xl text-primary-green mb-8">
               — Dr. Brahma Prakash Maurya
