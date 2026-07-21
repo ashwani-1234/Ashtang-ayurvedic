@@ -17,9 +17,9 @@ const HomePage: React.FC = () => (
     <Hero />
     <PrakritiTest />
     <ConditionsWeManage />
-    <SeasonalWellness onOpenBooking={() => setIsBookingOpen(true)} />
     <Services />
     <DoctorBio />
+    <SeasonalWellness />
     <HealthBlog />
     <Location />
   </>
@@ -31,7 +31,6 @@ export default function App() {
       <div className="min-h-screen bg-bg-cream font-sans text-text-dark selection:bg-accent-gold selection:text-primary-green flex flex-col justify-between">
         <AnimatedBackground/>
         <Navbar />
-<AnimatedBackground />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
