@@ -45,6 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <p className="text-[#a0aec0] text-[0.65rem] uppercase tracking-[2px] -mt-0.5 truncate">
               clinic, Sitapur
             </p>
+            <p className="text-[#a0aec0] text-[0.50rem] uppercase tracking-[2px] -mt-0.5 truncate">Ayurveda the way of life!</p>
           </div>  
 
 </Link>
@@ -56,6 +57,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <li><a href="/#services" className="text-white hover:text-accent-gold transition">TREATMENTS</a></li>
           <li><a href="/#location" className="text-white hover:text-accent-gold transition">FIND US</a></li>
           <li>
+            <a href="#seasonal-wellness" className="text-white hover:text-accent-gold transition">SEASONAL CARE</a>
+          </li>
+          <li>
             <a
               href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
               target="_blank"
@@ -64,6 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             >
               Book Consultation
             </a>
+            
           </li>
         </ul>
 
@@ -84,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <a href="/#about" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">THE DOCTOR</a>
           <a href="/#services" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">TREATMENTS</a>
           <a href="/#location" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">FIND US</a>
-          
+          <a href="#seasonal-wellness" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">SEASONAL CARE</a>
           <a
             href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
             target="_blank"
