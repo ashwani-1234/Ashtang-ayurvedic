@@ -45,6 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <p className="text-[#a0aec0] text-[0.65rem] uppercase tracking-[2px] -mt-0.5 truncate">
               clinic, Sitapur
             </p>
+            <p className="text-[#a0aec0] text-[0.50rem] uppercase tracking-[2px] -mt-0.5 truncate">Ayurveda the way of life!</p>
           </div>  
 
 </Link>
