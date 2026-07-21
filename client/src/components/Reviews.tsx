@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Star, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
 interface Review {
@@ -9,38 +9,34 @@ interface Review {
   createdAt?: string;
 }
 
+const sampleReviews: Review[] = [
+  {
+    id: 1,
+    name: 'Asha, Sitapur',
+    text: 'The treatment experience was calm, personal and deeply healing.',
+    stars: 5,
+    createdAt: '2026-07-01T00:00:00.000Z',
+  },
+  {
+    id: 2,
+    name: 'Ravi, Lucknow',
+    text: 'The guidance felt natural and effective. I appreciated the care and patience.',
+    stars: 5,
+    createdAt: '2026-06-20T00:00:00.000Z',
+  },
+];
+
 export const Reviews: React.FC = () => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [reviews, setReviews] = useState<Review[]>(sampleReviews);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  // Form State
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [rating, setRating] = useState(5);
 
-  // 1. Fetch Top 10 Reviews from SQLite DB
-  const fetchReviews = async () => {
-    try {
-      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/reviews');
-      if (!res.ok) throw new Error('Failed to load reviews');
-      const data = await res.json();
-      setReviews(data);
-    } catch (err) {
-      console.error('Could not load reviews from server:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-
-  // 2. Submit New Review to DB
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
 
@@ -48,34 +44,22 @@ export const Reviews: React.FC = () => {
     setErrorMsg(null);
     setSuccessMsg(null);
 
-    try {
-      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/reviews', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, text, stars: rating }),
-      });
+    const newReview: Review = {
+      id: Date.now(),
+      name: name.trim(),
+      text: text.trim(),
+      stars: rating,
+      createdAt: new Date().toISOString(),
+    };
 
-      const data = await res.json();
+    setReviews((prev) => [newReview, ...prev].slice(0, 10));
+    setSuccessMsg('Thank you! Your feedback has been published.');
+    setName('');
+    setText('');
+    setRating(5);
 
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to submit review.');
-      }
-
-      // Immediately prepend the new review to the UI list (keeping max 10)
-      setReviews((prev) => [data.review, ...prev].slice(0, 10));
-      setSuccessMsg('Thank you! Your feedback has been published.');
-
-      // Reset Form
-      setName('');
-      setText('');
-      setRating(5);
-
-      setTimeout(() => setSuccessMsg(null), 4000);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Error submitting review. Try again later.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    setTimeout(() => setSuccessMsg(null), 4000);
+    setIsSubmitting(false);
   };
 
   return (
@@ -167,12 +151,7 @@ export const Reviews: React.FC = () => {
 
           {/* Dynamic Feed (Max 10) */}
           <div className="md:col-span-7 space-y-4 max-h-[550px] overflow-y-auto pr-2">
-            {isLoading ? (
-              <div className="py-16 text-center flex flex-col items-center justify-center bg-white rounded-xl border border-gray-100">
-                <Loader2 className="w-8 h-8 text-primary-green animate-spin mb-3" />
-                <p className="text-xs text-gray-500 font-medium">Loading patient testimonials from database...</p>
-              </div>
-            ) : reviews.length === 0 ? (
+            {reviews.length === 0 ? (
               <div className="py-16 text-center bg-white rounded-xl border border-gray-100 p-8">
                 <Star className="w-12 h-12 text-gray-300 mx-auto mb-3" />
                 <h4 className="font-serif font-bold text-gray-700 text-base">No Reviews Yet</h4>

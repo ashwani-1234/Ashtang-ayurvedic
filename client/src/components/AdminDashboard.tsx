@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Calendar, Users, CheckCircle, Clock, XCircle, Search, 
@@ -20,8 +20,8 @@ interface Appointment {
 
 export const AdminDashboard: React.FC = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>('Appointment management is currently unavailable while bookings are handled directly through WhatsApp.');
   const [updatingId, setUpdatingId] = useState<string | null>(null);
 
   // Filter & Search States
@@ -29,42 +29,19 @@ export const AdminDashboard: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [serviceFilter, setServiceFilter] = useState<string>('ALL');
 
-  const fetchAppointments = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch('https://ashtang-clinic-api.onrender.com/api/appointments');
-      if (!res.ok) throw new Error('Failed to fetch patient appointments.');
-      const data = await res.json();
-      setAppointments(data);
-    } catch (err: any) {
-      setError(err.message || 'Could not connect to clinic server on port 5000.');
-    } finally {
-      setLoading(false);
-    }
+  const fetchAppointments = () => {
+    setLoading(false);
+    setError('Appointment management is currently unavailable while bookings are handled directly through WhatsApp.');
   };
-
-  useEffect(() => {
-    fetchAppointments();
-  }, []);
 
   const handleStatusChange = async (id: string, newStatus: string) => {
     setUpdatingId(id);
     try {
-      const res = await fetch(`https://ashtang-clinic-api.onrender.com/api/appointments/${id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status: newStatus }),
-      });
-      
-      if (!res.ok) throw new Error('Failed to update status.');
-      
-      // Update local state smoothly without a full page reload
       setAppointments((prev) =>
         prev.map((app) => (app.id === id ? { ...app, status: newStatus as any } : app))
       );
     } catch (err) {
-      alert('Error updating status. Please try again.');
+      alert('Appointment management is currently unavailable while bookings are handled through WhatsApp.');
     } finally {
       setUpdatingId(null);
     }

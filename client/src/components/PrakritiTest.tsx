@@ -365,12 +365,14 @@ export function PrakritiTest({ onOpenBooking }: PrakritiTestProps) {
 
               {/* ACTION BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button
-                  onClick={onOpenBooking}
+                <a
+                  href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैंने%20वेबसाइट%20पर%20प्रकृति%20टेस्ट%20किया%20है%20और%20मैं%20परामर्श%20लेना%20चाहता/चाहती%20हूं।"
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2"
                 >
                   📅 परामर्श बुक करें (Book Appointment)
-                </button>
+                </a>
 
                 <a
                   href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैंने%20वेबसाइट%20पर%20प्रकृति%20टेस्ट%20किया%20है%20और%20मैं%20परामर्श%20लेना%20चाहता/चाहती%20हूं।"

@@ -56,13 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <li><a href="/#services" className="text-white hover:text-accent-gold transition">TREATMENTS</a></li>
           <li><a href="/#location" className="text-white hover:text-accent-gold transition">FIND US</a></li>
           <li>
-            <button 
-              onClick={handleBookingClick}
-              type="button"
-              className="bg-accent-gold text-primary-green px-4 py-2.5 rounded font-bold uppercase hover:brightness-110 transition shadow-sm whitespace-nowrap block cursor-pointer"
+            <a
+              href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 inline-flex items-center gap-2"
             >
               Book Consultation
-            </button>
+            </a>
           </li>
         </ul>
 
@@ -84,13 +85,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <a href="/#services" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">TREATMENTS</a>
           <a href="/#location" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">FIND US</a>
           
-          <button 
-            onClick={handleBookingClick} 
-            type="button"
-            className="inline-block bg-accent-gold text-primary-green px-6 py-2.5 rounded font-bold uppercase w-full mt-2 whitespace-nowrap cursor-pointer"
+          <a
+            href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 w-full mt-2 whitespace-nowrap"
           >
             Book Consultation
-          </button>
+          </a>
         </div>
       )}
     </nav>
