@@ -12,6 +12,8 @@ import { HealthBlog } from './components/HealthBlog';
 import { AdminDashboard } from './components/AdminDashboard';
 import { SeasonalWellness } from './components/SeasonalWellness';
 import { AnimatedBackground } from './components/AnimatedBackground';
+import { PatientResources } from './components/PatientResources';
+
 const HomePage: React.FC = () => (
   <>
     <Hero />
@@ -20,6 +22,7 @@ const HomePage: React.FC = () => (
     <Services />
     <DoctorBio />
     <SeasonalWellness />
+    <PatientResources />
     <HealthBlog />
     <Location />
   </>
