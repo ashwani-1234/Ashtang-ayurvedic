@@ -39,7 +39,7 @@ export const Location: React.FC = () => {
               <Phone className="text-accent-gold shrink-0" size={22} />
               <div>
                 <strong className="block text-primary-green">Phone:</strong>
-                <a href="tel:+918052899698" className="text-gray-600 hover:text-primary-green">+91 8052899698</a>
+                <a href="tel:+918052899698" className="text-gray-600 hover:text-primary-green">+91 5862315289</a>
               </div>
             </div>
 
