@@ -20,13 +20,13 @@ export const PatientResources: React.FC = () => {
   ];
 
   return (
-    <section id="patient-resources" className="py-24 bg-bg-cream">
+    <section id="patient-resources" className="py-16 bg-bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-accent-gold font-semibold uppercase tracking-[0.25em] text-sm mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <p className="text-accent-gold font-semibold uppercase tracking-[0.25em] text-sm mb-3">
             Patient Resources
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-3">
             View or download important documents
           </h2>
           <p className="text-gray-600 text-lg">
@@ -40,7 +40,7 @@ export const PatientResources: React.FC = () => {
               key={resource.title}
               className="bg-white rounded-3xl border border-accent-gold/20 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex items-start gap-4 mb-6">
+              <div className="flex items-start gap-4 mb-4">
                 <div className="rounded-2xl bg-accent-gold/15 p-3">
                   <FileText className="w-7 h-7 text-primary-green" />
                 </div>

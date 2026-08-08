@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // ==========================================
 // DEFAULT STARTER ARTICLES (Pre-loaded!)
@@ -68,10 +69,12 @@ const initialArticles = [
 
 interface HealthBlogProps {
   onOpenBooking?: () => void;
+  previewMode?: boolean;
 }
 
-export function HealthBlog({ onOpenBooking }: HealthBlogProps) {
+export function HealthBlog({ onOpenBooking, previewMode = false }: HealthBlogProps) {
   const [selectedArticle, setSelectedArticle] = useState<typeof initialArticles[0] | null>(null);
+  const displayArticles = previewMode ? initialArticles.slice(0, 2) : initialArticles;
 
   return (
     <section className="py-16 px-4 bg-emerald-950 text-white font-sans border-t border-emerald-900 relative">
@@ -82,7 +85,7 @@ export function HealthBlog({ onOpenBooking }: HealthBlogProps) {
         {/* ========================================== */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block px-4 py-1 rounded-full bg-emerald-900/80 border border-emerald-700 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            Dr. Dr. Brahma Prakash Maurya's Wellness Blog
+            Dr. Brahma Prakash Maurya's Wellness Blog
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
             Ayurvedic Health & Lifestyle Insights
@@ -96,7 +99,7 @@ export function HealthBlog({ onOpenBooking }: HealthBlogProps) {
         {/* ARTICLES GRID */}
         {/* ========================================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {initialArticles.map((art) => (
+          {displayArticles.map((art) => (
             <div 
               key={art.id}
               onClick={() => setSelectedArticle(art)}
@@ -130,6 +133,17 @@ export function HealthBlog({ onOpenBooking }: HealthBlogProps) {
             </div>
           ))}
         </div>
+
+        {previewMode && (
+          <div className="text-center mt-6">
+            <Link
+              to="/blog"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-950 hover:from-amber-400 hover:to-emerald-500 transition shadow-xl"
+            >
+              Read More Articles ➔
+            </Link>
+          </div>
+        )}
 
         {/* ========================================== */}
         {/* MODAL: FULL ARTICLE READER */}

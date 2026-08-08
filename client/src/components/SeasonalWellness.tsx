@@ -266,24 +266,7 @@ export function SeasonalWellness({ onOpenBooking }: SeasonalProps) {
         {/* ========================================== */}
         {/* BOTTOM CALL TO ACTION */}
         {/* ========================================== */}
-        <div className="bg-gradient-to-r from-emerald-900 to-emerald-950 border border-emerald-700 rounded-2xl p-6 sm:p-8 text-center max-w-4xl mx-auto shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-left">
-            <h4 className="text-lg sm:text-xl font-serif font-bold text-white mb-1">
-              Need a Personalized Seasonal Detox?
-            </h4>
-            <p className="text-xs sm:text-sm text-gray-300">
-              Consult with Dr. Maurya to prepare your body for the changing seasons with customized Panchakarma and herbal tonics.
-            </p>
-          </div>
-          <button
-            onClick={onOpenBooking}
-            className="w-full sm:w-auto px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-sm flex items-center justify-center gap-2"
-          >
-            📅 Book Consultation
-          </button>
         </div>
-
-      </div>
     </section>
   );
 }

@@ -68,7 +68,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             >
               Book Consultation
             </a>
-            
           </li>
         </ul>
 
@@ -91,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <a href="/#location" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">FIND US</a>
           <a href="#seasonal-wellness" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">SEASONAL CARE</a>
           <a
-            href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
+            href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहती%20हूं।"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 w-full mt-2 whitespace-nowrap"

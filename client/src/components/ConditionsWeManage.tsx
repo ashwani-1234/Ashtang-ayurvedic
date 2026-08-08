@@ -78,9 +78,6 @@ export function ConditionsWeManage({ onOpenBooking }: ConditionsProps) {
         {/* HEADER & ETHICAL COMPLIANCE BANNER */}
         {/* ========================================== */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-1 rounded-full bg-emerald-900/80 border border-emerald-700 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            Holistic Health Care
-          </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
             We Help Manage & Support
           </h2>
