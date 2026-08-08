@@ -8,3 +8,28 @@
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Poppins', sans-serif;
 }
+
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+}
+
+@keyframes heroBackground {
+  0% { background-position: center 40%; }
+  50% { background-position: center 60%; }
+  100% { background-position: center 40%; }
+}
+
+.hero-animate {
+  animation: heroBackground 30s ease-in-out infinite;
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out 1.6s forwards;
+}
+

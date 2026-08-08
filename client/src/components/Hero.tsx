@@ -5,7 +5,7 @@ export const Hero: React.FC = () => {
   return (
     <div className="relative">
       {/* Hero Banner Section */}
-      <header className="h-[70vh] bg-gradient-to-r from-primary-green/90 to-black/50 bg-cover bg-center flex items-center justify-center text-center px-4" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80')` }}>
+      <header className="h-[70vh] bg-gradient-to-r from-primary-green/90 to-black/50 bg-cover bg-center hero-animate flex items-center justify-center text-center px-4" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80')` }}>
         <div className="max-w-3xl">
           <h2 className="font-serif text-4xl sm:text-6xl text-white font-bold leading-tight mb-4">
             Ancient Wisdom for <br /><span className="text-accent-gold">Modern Healing</span>
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
               <Users size={28} />
             </div>
             <div>
-              <h4 className="font-bold text-primary-green text-sm sm:text-base">1000+</h4>
+              <h4 className="font-bold text-primary-green text-sm sm:text-base">2000+</h4>
               <p className="text-gray-500 text-xs">Happy Patients</p>
             </div>
           </div>
