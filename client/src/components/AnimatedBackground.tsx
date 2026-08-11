@@ -1,8 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export function AnimatedBackground() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    // Lightweight mobile version with reduced animations
+    return (
+      <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden bg-transparent">
+        
+        {/* Mobile: Smaller, less blurred glows */}
+        
+        {/* 1. Top-Left Soft Sage Green Glow - SMALLER */}
+        <div 
+          className="absolute -top-20 -left-20 w-40 h-40 bg-emerald-600/15 rounded-full blur-[60px]"
+          style={{ animation: 'none' }}
+        />
+
+        {/* 2. Middle-Right Warm Ayurvedic Gold Glow - SMALLER */}
+        <div 
+          className="absolute top-1/3 -right-16 w-48 h-48 bg-amber-500/12 rounded-full blur-[70px]"
+          style={{ animation: 'none' }}
+        />
+
+        {/* 3. Bottom-Left Soft Herbal Glow - SMALLER */}
+        <div 
+          className="absolute -bottom-16 -left-16 w-44 h-44 bg-emerald-500/12 rounded-full blur-[60px]"
+          style={{ animation: 'none' }}
+        />
+
+        {/* No particles on mobile for performance */}
+      </div>
+    );
+  }
+
+  // Desktop version with full animations
   return (
-    // Notice: bg-transparent instead of solid green! It sits quietly in the back (z-[0]).
     <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden bg-transparent">
       
       {/* 1. Top-Left Soft Sage Green Glow */}
