@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flame, Sparkles, HeartPulse } from 'lucide-react';
 
 export const Services: React.FC = () => {
+  const [showAllServices, setShowAllServices] = useState(false);
+
   const treatments = [
     {
       title: "Panchkarma",
@@ -42,22 +44,24 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-10 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-16">
+        <h2 className="text-center font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-8 sm:mb-12 lg:mb-16">
           Specialized Treatments
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {treatments.map((item, idx) => (
             <div 
               key={idx} 
-              className="bg-bg-cream p-8 rounded-2xl border border-accent-gold/20 flex flex-col justify-between hover:-translate-y-2 hover:bg-white hover:border-accent-gold hover:shadow-xl transition-all duration-300"
+              className={`bg-bg-cream p-5 sm:p-6 lg:p-8 rounded-2xl border border-accent-gold/20 flex flex-col justify-between hover:-translate-y-2 hover:bg-white hover:border-accent-gold hover:shadow-xl transition-all duration-300 ${
+                idx > 1 && !showAllServices ? 'hidden lg:flex' : ''
+              }`}
             >
               <div>
-                <div className="mb-6">{item.icon}</div>
+                <div className="mb-4 lg:mb-6">{item.icon}</div>
                 <h3 className="font-serif text-2xl font-bold text-primary-green mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{item.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 lg:mb-6">{item.desc}</p>
               </div>
               
               <ul className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/60">
@@ -69,6 +73,16 @@ export const Services: React.FC = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-8 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAllServices((current) => !current)}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-950 hover:from-amber-400 hover:to-emerald-500 transition shadow-xl"
+          >
+            {showAllServices ? 'Show Less' : 'View More Services'}
+          </button>
         </div>
       </div>
     </section>

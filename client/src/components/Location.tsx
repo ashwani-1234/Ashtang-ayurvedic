@@ -38,9 +38,9 @@ export const Location: React.FC = () => {
   const currentBranch = branches[selectedBranch];
 
   return (
-    <section id="location" className="py-20 bg-white">
+    <section id="location" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-12">
+        <h2 className="text-center font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-8 sm:mb-10 lg:mb-12">
           Visit Our Clinic
         </h2>
 
@@ -64,7 +64,7 @@ export const Location: React.FC = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Map Frame */}
           <div className="lg:col-span-7 bg-gray-100 rounded-2xl overflow-hidden shadow-md h-[400px]">
             <iframe 

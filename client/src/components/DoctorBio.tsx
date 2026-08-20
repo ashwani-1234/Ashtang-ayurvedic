@@ -3,9 +3,9 @@ import { PhoneCall } from 'lucide-react';
 
 export const DoctorBio: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-bg-cream border-y border-accent-gold/20">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-bg-cream border-y border-accent-gold/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 lg:gap-12">
           
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative">
@@ -20,7 +20,7 @@ export const DoctorBio: React.FC = () => {
 
           <div className="w-full md:w-1/2">
             <span className="text-accent-gold font-bold uppercase tracking-widest text-xs">Expert Care</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mt-2 mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mt-2 mb-4 sm:mb-6">
               Ashtang Ayurveda Clinic Specialist
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">

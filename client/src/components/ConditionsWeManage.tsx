@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // ==========================================
 // 17 CONDITIONS GROUPED BY HEALTH CATEGORY
@@ -70,18 +70,20 @@ interface ConditionsProps {
 }
 
 export function ConditionsWeManage({ onOpenBooking }: ConditionsProps) {
+  const [showAllConditions, setShowAllConditions] = useState(false);
+
   return (
-    <section className="py-16 px-4 bg-emerald-950 text-white relative overflow-hidden border-t border-emerald-900 font-sans">
+    <section className="py-10 sm:py-14 lg:py-16 px-4 bg-emerald-950 text-white relative overflow-hidden border-t border-emerald-900 font-sans">
       <div className="max-w-6xl mx-auto">
         
         {/* ========================================== */}
         {/* HEADER & ETHICAL COMPLIANCE BANNER */}
         {/* ========================================== */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
             We Help Manage & Support
           </h2>
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 lg:mb-6">
             At Ashtang Ayurved, we believe in addressing the root cause of chronic imbalance. Through **supportive Ayurvedic care**, lifestyle realignment, and **personalized treatment protocols**, we assist patients in the long-term management of chronic health conditions.
           </p>
         </div>
@@ -89,11 +91,13 @@ export function ConditionsWeManage({ onOpenBooking }: ConditionsProps) {
         {/* ========================================== */}
         {/* CATEGORIZED CONDITIONS GRID */}
         {/* ========================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-8 lg:mb-12">
           {conditionCategories.map((cat, idx) => (
             <div 
               key={idx}
-              className="bg-emerald-900/40 border border-emerald-800/80 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:bg-emerald-900/60 flex flex-col justify-between shadow-lg group"
+              className={`bg-emerald-900/40 border border-emerald-800/80 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:bg-emerald-900/60 flex flex-col justify-between shadow-lg group ${
+                idx > 1 && !showAllConditions ? 'hidden lg:flex' : ''
+              }`}
             >
               <div>
                 <div className="flex items-center gap-3 mb-3">
@@ -121,6 +125,16 @@ export function ConditionsWeManage({ onOpenBooking }: ConditionsProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mb-12 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAllConditions((current) => !current)}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-950 hover:from-amber-400 hover:to-emerald-500 transition shadow-xl"
+          >
+            {showAllConditions ? 'Show Less' : 'View More Conditions'}
+          </button>
         </div>
 
         {/* ========================================== */}

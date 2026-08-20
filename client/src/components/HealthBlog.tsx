@@ -77,13 +77,13 @@ export function HealthBlog({ onOpenBooking, previewMode = false }: HealthBlogPro
   const displayArticles = previewMode ? initialArticles.slice(0, 2) : initialArticles;
 
   return (
-    <section className="py-16 px-4 bg-emerald-950 text-white font-sans border-t border-emerald-900 relative">
+    <section className="py-10 sm:py-14 lg:py-16 px-4 bg-emerald-950 text-white font-sans border-t border-emerald-900 relative">
       <div className="max-w-6xl mx-auto">
         
         {/* ========================================== */}
         {/* HEADER SECTION */}
         {/* ========================================== */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <span className="inline-block px-4 py-1 rounded-full bg-emerald-900/80 border border-emerald-700 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
             Dr. Brahma Prakash Maurya's Wellness Blog
           </span>
@@ -98,12 +98,12 @@ export function HealthBlog({ onOpenBooking, previewMode = false }: HealthBlogPro
         {/* ========================================== */}
         {/* ARTICLES GRID */}
         {/* ========================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-8 lg:mb-12">
           {displayArticles.map((art) => (
             <div 
               key={art.id}
               onClick={() => setSelectedArticle(art)}
-              className="bg-emerald-900/40 border border-emerald-800/80 rounded-2xl p-6 hover:border-amber-500/60 transition-all duration-300 hover:bg-emerald-900/70 flex flex-col justify-between shadow-lg cursor-pointer group"
+              className="bg-emerald-900/40 border border-emerald-800/80 rounded-2xl p-5 sm:p-6 hover:border-amber-500/60 transition-all duration-300 hover:bg-emerald-900/70 flex flex-col justify-between shadow-lg cursor-pointer group"
             >
               <div>
                 {/* Category & Read Time */}

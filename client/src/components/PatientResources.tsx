@@ -20,39 +20,39 @@ export const PatientResources: React.FC = () => {
   ];
 
   return (
-    <section id="patient-resources" className="py-16 bg-bg-cream">
+    <section id="patient-resources" className="bg-bg-cream py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <p className="text-accent-gold font-semibold uppercase tracking-[0.25em] text-sm mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-5">
+          <p className="text-accent-gold font-semibold uppercase tracking-[0.25em] text-xs sm:text-sm mb-2">
             Patient Resources
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-green mb-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-primary-green mb-2">
             View or download important documents
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base">
             Helpful patient documents are now available in one easy place for quick access.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {resources.map((resource) => (
             <div
               key={resource.title}
-              className="bg-white rounded-3xl border border-accent-gold/20 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-white rounded-3xl border border-accent-gold/20 p-5 sm:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="rounded-2xl bg-accent-gold/15 p-3">
-                  <FileText className="w-7 h-7 text-primary-green" />
+              <div className="flex items-start gap-3 mb-4">
+                <div className="rounded-2xl bg-accent-gold/15 p-2.5 shrink-0">
+                  <FileText className="w-6 h-6 text-primary-green" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-2xl font-bold text-primary-green mb-2">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary-green mb-1">
                     {resource.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{resource.description}</p>
+                  <p className="text-gray-600 text-sm leading-6">{resource.description}</p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 pl-0 sm:pl-[3.75rem]">
                 <a
                   href={resource.file}
                   target="_blank"

@@ -21,13 +21,13 @@ import { ShareButton } from './components/ShareButton';
 const HomePage: React.FC = () => (
   <>
     <Hero />
+    <PatientResources />
     <PrakritiTest />
     <ConditionsWeManage />
     <VisualSymptomLocator />
     <Services />
     <DoctorBio />
     <SeasonalWellness />
-    <PatientResources />
     <HealthBlog previewMode={true} />
     <Location />
   </>
