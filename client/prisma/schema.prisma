@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum Branch {
+  SITAPUR
+  LAKHIMPUR
+}
+
+enum ApptStatus {
+  WAITING
+  IN_CONSULTATION
+  COMPLETED
+  CANCELLED
+}
+
+model Patient {
+  id          String        @id @default(uuid())
+  fullName    String
+  phone       String        @unique 
+  age         Int
+  gender      Gender
+  address     String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  appointments Appointment[] 
+}
+
+model Appointment {
+  id              String     @id @default(uuid())
+  patientId       String
+  patient         Patient    @relation(fields: [patientId], references: [id])
+  chiefComplaint  String     
+  duration        String     
+  status          ApptStatus @default(WAITING)
+  branch          Branch     @default(SITAPUR)
+  appointmentDate DateTime   @default(now())
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}

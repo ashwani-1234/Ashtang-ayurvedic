@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center space-x-6 xl:space-x-8 font-sans font-semibold text-sm shrink-0">
+        <ul className="hidden lg:ml-10 lg:flex items-center gap-8 font-sans text-xs font-medium tracking-[0.05em] shrink-0 xl:gap-9">
           <li><Link to="/" className="text-white hover:text-accent-gold transition">HOME</Link></li>
           <li><a href="/#about" className="text-white hover:text-accent-gold transition">THE DOCTOR</a></li>
           <li><a href="/#services" className="text-white hover:text-accent-gold transition">TREATMENTS</a></li>
@@ -60,11 +60,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <a href="#seasonal-wellness" className="text-white hover:text-accent-gold transition">SEASONAL CARE</a>
           </li>
           <li>
+            <Link to="/lakhimpur-kheri" className="text-white hover:text-accent-gold transition">
+              LAKHIMPUR BRANCH
+            </Link>
+          </li>
+          <li>
+            <Link to="/case-studies" className="text-white hover:text-accent-gold transition">
+              SUCCESS STORIES
+            </Link>
+          </li>
+          <li>
             <a
               href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहता/चाहती%20हूं।"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl bg-accent-gold px-6 py-3 font-semibold tracking-normal text-primary-green shadow-lg transition-transform hover:scale-105 hover:brightness-95"
             >
               Book Consultation
             </a>
@@ -84,16 +94,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* Mobile Menu Drawer */}
       {isOpen && (
         <div className="lg:hidden bg-primary-green border-b border-accent-gold px-4 pt-2 pb-6 space-y-3 text-center">
-          <Link to="/" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">HOME</Link>
-          <a href="/#about" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">THE DOCTOR</a>
-          <a href="/#services" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">TREATMENTS</a>
-          <a href="/#location" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">FIND US</a>
-          <a href="#seasonal-wellness" onClick={() => setIsOpen(false)} className="block text-white py-2 font-semibold hover:text-accent-gold transition">SEASONAL CARE</a>
+          <Link to="/" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">HOME</Link>
+          <a href="/#about" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">THE DOCTOR</a>
+          <a href="/#services" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">TREATMENTS</a>
+          <a href="/#location" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">FIND US</a>
+          <a href="#seasonal-wellness" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">SEASONAL CARE</a>
+          <Link to="/lakhimpur-kheri" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">
+            LAKHIMPUR BRANCH
+          </Link>
+          <Link to="/case-studies" onClick={() => setIsOpen(false)} className="block py-2 text-xs font-medium tracking-[0.05em] text-white hover:text-accent-gold transition">
+            SUCCESS STORIES
+          </Link>
           <a
             href="https://wa.me/918052899698?text=नमस्ते%20डॉक्टर,%20मैं%20अष्टांग%20आयुर्वेद%20वेबसाइट%20से%20परामर्श%20(Consultation)%20बुक%20करना%20चाहती%20हूं।"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl shadow-lg transition-transform hover:scale-105 w-full mt-2 whitespace-nowrap"
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-accent-gold px-6 py-3 font-semibold tracking-normal text-primary-green shadow-lg transition-transform hover:scale-105 hover:brightness-95"
           >
             Book Consultation
           </a>
